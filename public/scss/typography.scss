@@ -1,10 +1,12 @@
 //Separate SCSS file for typography for better code organisation
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 200 to 1000
 
-
+//Adding the Nunito font family from Google Fonts
 //Font sourced from https://fonts.google.com/specimen/Nunito
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+//Adding the Dongle Regular font
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
 //Learned how to add variable fonts with SCSS from the following links, using mixins
 //Mixin @include code partially sourced from https://stackoverflow.com/questions/38968129/how-to-write-variable-with-multiple-css-properties-in-sass
@@ -13,7 +15,7 @@
 //Used mixins to create groups of CSS code to define different types of Nunito fonts e.g. Regular, Bold
 //Mixins were used over variables since variables can only store a single property, while mixins can store multiple e.g. font-weight & font-family
 @mixin nunito-font($boldness: 500) { //Nunito Regular
-    font-family: "Nunito", sans-serif;
+    font-family: "Nunito", sans-serif; //ADD more back-up fonts
     font-optical-sizing: auto;
     font-weight: $boldness;
     font-style: normal;
@@ -32,3 +34,4 @@
     font-weight: $boldness;
     font-style: normal;
 }
+

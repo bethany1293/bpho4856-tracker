@@ -35,3 +35,8 @@ h1 {
 h2 {
     @include typography.nunito-font($boldness: 600); //Nunito Semi-Bold
 }
+
+.brand-font { //Font of Brand/Logo
+    font-family: 'Dongle', sans-serif; //Applied Dongle Regular
+    text-decoration: none; //Removed the underline from the text
+}
