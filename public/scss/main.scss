@@ -1,3 +1,17 @@
-@import 'reset';
-@import 'layout';
-@import 'typography';
+//@Import will be depreciated
+@use 'reset';
+@use 'layout';
+@use 'typography';
+@use 'colour';
+
+
+.sidebar {
+    //Learned how to import variables from other scss files when using '@use' - in colour.$primary-colour
+    //Sourced from (https://stackoverflow.com/questions/73172387/use-not-working-in-sass-to-import-variables-but-import-is-working)
+    background-color: colour.$primary-colour; //Dark Purple, #4B4263 
+}
+
+//Removes bullet points from the unordered list (https://www.w3schools.com/howto/howto_css_list_without_bullets.asp)
+.nav-list {
+    list-style-type: none;
+}
