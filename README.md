@@ -1,6 +1,36 @@
 # BakeTrove - DECO2017 Web App Prototype
 
-## Reference List (APA 7th)
+## Project Overview
+
+## Version Control
+
+## Features
+
+## Setup
+
+## Usage
+
+## Limitations
+
+## Style References
+
+### Colours
+
+### Typefaces
+
+## Prototype vs Mockup changes
+
+## Reflection
+
+### Challenges
+
+### What I would do differently
+
+### Future Steps
+
+## Supported Browsers
+
+## References List (APA 7th)
 
 Chen, N. (2023). *Japanese Cheesecake (Video) スフレチーズケーキ*. [Photo]. https://www.justonecookbook.com/souffle-japanese-cheesecake/
 
