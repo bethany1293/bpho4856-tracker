@@ -25,7 +25,7 @@
 //Mixins were used over variables since variables can only store a single property, while mixins can store multiple e.g. font-weight
 .nav-font {
     @include typography.nunito-font($boldness: 500); //Nunito Regular
-    color: #FFFFFF; //White
+    color: colour.$neutral-colour; //White, #FFFFFF
 }
 
 h1 {
