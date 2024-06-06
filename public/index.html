@@ -7,7 +7,7 @@
     <link rel="stylesheet" type= "text/css" href="./scss/main.scss">
 </head>
 <body>
-        <!--Semantic HTML tags used e.g. header, aside, main-->
+        <!--Semantic HTML tags used e.g. header, aside, main, for screenreaders and accessibility purposes-->
         <header>
             <!--Add icon of hamburger menu here-->
             <a href = '#'>BakeTrove</a>
@@ -27,5 +27,25 @@
                 </ul>
             </nav>
         </aside>
+
+        <!--Main tag to indicate the main content of the page-->
+        <main>
+            <h1>Dashboard</h1>
+            <button>Add Recipe</button>
+            <button>Add Recipe Log</button>
+            <section>
+                <h2>Last Used Recipes</h2>
+                <button>View More</button>
+                <article>
+                    <p>Japanese Cheesecake</p>
+                </article>
+                <article>
+                    <p>Kahlua buns stuffed w/ mascarpone creamand salted pistachio powder</p>
+                </article>
+                <article>
+                    <p>30 minute Chewy Chocolate Cookies</p>
+                </article>
+            </section>
+        </main>
 </body>
 </html>
