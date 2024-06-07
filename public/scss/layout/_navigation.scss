@@ -18,8 +18,9 @@
     display:flex; //Creates a flexbox container
     flex-direction: column; //Makes menu items display vertically
     gap: 2em; //Adds vertical spacing between each menu item
-    height:100vw; //Makes sidebar span the whole viewport height
-    width: 15%; 
+    height:100vh; //Makes sidebar span the whole viewport height
+    width: 100%; 
+    flex-basis:auto;
     @include typography.nunito-font($boldness: 500); //Nunito Medium
     background-color: colours.$primary-colour; //Dark Purple, #4B4263 
     color: colours.$neutral-colour; //White, #FFFFFF

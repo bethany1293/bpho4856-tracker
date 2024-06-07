@@ -23,7 +23,7 @@
 //Used mixins to create groups of CSS code to define different types of Nunito fonts e.g. Regular, Bold
 //Mixins were used over variables since variables can only store a single property, while mixins can store multiple e.g. font-weight & font-family
 @mixin nunito-font($boldness: 500) { //Nunito Medium
-    font-family: "Nunito", sans-serif; //ADD more back-up fonts
+    font-family: "Nunito", sans-serif;
     font-optical-sizing: auto;
     font-weight: $boldness;
     font-style: normal;
@@ -46,8 +46,10 @@
 /*APPLYING FONT FAMILY, FONT SIZE, STYLING - To standardised elements i.e. h1-h6*/
 h1 {
     @include nunito-font($boldness: 700); //Nunito Bold
+    font-size:2.125em; //around 34px
 }
 
 h2 {
     @include nunito-font($boldness: 600); //Nunito Semi-Bold
+    font-size: 1.875em; //around 30px
 }

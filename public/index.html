@@ -18,66 +18,68 @@
         <a class="header__logo" href = '#'>BakeTrove</a>
     </header>
 
-    <!--Semantic 'aside' tag used to indicate content on the side of the main content-->
-    <aside>
-        <!--Standardised collapsible side navigation bar - utilised despite the app being an SPA-->
-        <nav class = "navbar">
-            <section class="navbar__item">
-                <img src="../assets/dashboard-icon.png" alt="Dashboard icon"/>
-                <p>Dashboard</p>
+    <section class="container">
+        <!--Semantic 'aside' tag used to indicate content on the side of the main content-->
+        <aside>
+            <!--Standardised collapsible side navigation bar - utilised despite the app being an SPA-->
+            <nav class = "navbar">
+                <section class="navbar__item">
+                    <img src="../assets/dashboard-icon.png" alt="Dashboard icon"/>
+                    <p>Dashboard</p>
+                </section>
+
+                <section class="navbar__item">
+                    <img src="../assets/recipes-icon.png" alt="Recipes icon"/>
+                    <p>Dessert Recipes</p>
+                </section>
+
+                <section class="navbar__item">
+                    <img src="../assets/add-recipelog-icon.png" alt="Add Recipe icon"/>
+                    <p>Add a Recipe</p>
+                </section>
+
+                <section class="navbar__item">
+                    <img src="../assets/add-recipe-icon.png" alt="Add Recipe Log icon"/>
+                    <p>Add a Recipe Log</p>
+                </section>
+            </nav>
+        </aside>
+
+        <!--Main tag to indicate the main content of the page-->
+        <main>
+            <h1>Dashboard</h1>
+            <button class="btn--primary">Add Recipe</button>
+            <button class="btn--primary">Add Recipe Log</button>
+            <section>
+                <h2>Last Used Recipes</h2>
+                <button class="btn--primary">View More</button>
+                <article>
+                    <p>Japanese Cheesecake</p>
+                </article>
+                <article>
+                    <p>Kahlua buns stuffed w/ mascarpone creamand salted pistachio powder</p>
+                </article>
+                <article>
+                    <p>30 minute Chewy Chocolate Cookies</p>
+                </article>
             </section>
 
-            <section class="navbar__item">
-                <img src="../assets/recipes-icon.png" alt="Recipes icon"/>
-                <p>Dessert Recipes</p>
+            <section>
+                <h2>Dessert Rating Log</h2>
+                <button>This Week</button>
+                <button>This Month</button>
+                <button>This Year</button>
             </section>
 
-            <section class="navbar__item">
-                <img src="../assets/add-recipelog-icon.png" alt="Add Recipe icon"/>
-                <p>Add a Recipe</p>
+            <h2>Areas to Improve</h2>
+            <section>
+                <h2>Desserts</h2>
             </section>
 
-            <section class="navbar__item">
-                <img src="../assets/add-recipe-icon.png" alt="Add Recipe Log icon"/>
-                <p>Add a Recipe Log</p>
+            <section>
+                <h2>Baking Techniques</h2>
             </section>
-        </nav>
-    </aside>
-
-    <!--Main tag to indicate the main content of the page-->
-    <main>
-        <h1>Dashboard</h1>
-        <button>Add Recipe</button>
-        <button>Add Recipe Log</button>
-        <section>
-            <h2>Last Used Recipes</h2>
-            <button>View More</button>
-            <article>
-                <p>Japanese Cheesecake</p>
-            </article>
-            <article>
-                <p>Kahlua buns stuffed w/ mascarpone creamand salted pistachio powder</p>
-            </article>
-            <article>
-                <p>30 minute Chewy Chocolate Cookies</p>
-            </article>
-        </section>
-
-        <section>
-            <h2>Dessert Rating Log</h2>
-            <button>This Week</button>
-            <button>This Month</button>
-            <button>This Year</button>
-        </section>
-
-        <h2>Areas to Improve</h2>
-        <section>
-            <h2>Desserts</h2>
-        </section>
-
-        <section>
-            <h2>Baking Techniques</h2>
-        </section>
-    </main>
+        </main>
+    </section>
 </body>
 </html>
