@@ -1,16 +1,24 @@
 //Separate SCSS file for typography for better code organisation
+//Includes font-family, font size and other styling
+@use 'colours'; //Importing other SCSS file with BakeTrove's brand colours
 
-//Adding the Nunito font family from Google Fonts
+
+/*IMPORTING FONTS*/
+//Adding the Nunito font family
 //Font sourced from https://fonts.google.com/specimen/Nunito
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 
 //Adding the Dongle Regular font
+//Font sourced from https://fonts.google.com/specimen/Nunito?query=Nunito
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
+
+
+/*DEFINING SPECIFIC FONTS WITHIN A FONT FAMILY*/
 //Learned how to add variable fonts with SCSS from the following links, using mixins
-//Mixin @include code partially sourced from https://stackoverflow.com/questions/38968129/how-to-write-variable-with-multiple-css-properties-in-sass
-//Mixin @include code partially sourced from https://sass-lang.com/guide/#topic-6
+//Mixin code partially sourced from https://stackoverflow.com/questions/38968129/how-to-write-variable-with-multiple-css-properties-in-sass
+//Mixin code partially sourced from https://sass-lang.com/guide/#topic-6
 
 //Used mixins to create groups of CSS code to define different types of Nunito fonts e.g. Regular, Bold
 //Mixins were used over variables since variables can only store a single property, while mixins can store multiple e.g. font-weight & font-family
@@ -35,3 +43,17 @@
     font-style: normal;
 }
 
+
+/*APPLYING FONT FAMILY, FONT SIZE, STYLING - To standardised elements e.g. h1-h6, logo font*/
+.brand-font { //Font of Brand Logo
+    font-family: 'Dongle', sans-serif; //Applied Dongle Regular
+    text-decoration: none; //Removed the underline from the text
+}
+
+h1 {
+    @include nunito-font($boldness: 700); //Nunito Bold
+}
+
+h2 {
+    @include nunito-font($boldness: 600); //Nunito Semi-Bold
+}

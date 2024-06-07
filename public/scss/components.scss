@@ -1,0 +1,32 @@
+//Separate SCSS file for Design System components for clearer code & file structure
+//Includes styling for buttons, header, sidebar
+
+@use 'colours'; //Imports separate SCSS file containing brand colours
+
+
+/*SIDE NAVIGATION BAR STYLING*/
+//Speciifcally, removed unnecessary descriptiontor '-position' from .side-bar-position
+.sidebar { //selects <aside>, id used as this targets a specific element
+    //Learned how to import variables from other scss files when using '@use' - in colour.$primary-colour
+    //Sourced from (https://stackoverflow.com/questions/73172387/use-not-working-in-sass-to-import-variables-but-import-is-working)
+    background-color: colours.$primary-colour; //Dark Purple, #4B4263 
+    height:100%;
+    width: 30%;
+}
+
+//Mixin @include code partially sourced from https://stackoverflow.com/questions/38968129/how-to-write-variable-with-multiple-css-properties-in-sass
+//Mixin @include code partially sourced from https://sass-lang.com/guide/#topic-6
+//Used mixins in @include to apply a group of SCSS code. In this case, a type of Nunito font i.e. Nunito Regular
+.navigation { //Font of side navigation menu items
+    @include nunito-font($boldness: 500); //Nunito Regular
+    color: colours.$neutral-colour; //White, #FFFFFF
+}
+
+//Used BEM naming convention for better code readability
+.navigation__list { //Menu items in navigation
+    //Removes bullet points from the unordered list (https://www.w3schools.com/howto/howto_css_list_without_bullets.asp)
+    list-style-type: none;
+}
+
+/*PRIMARY BUTTON STYLING*/
+
