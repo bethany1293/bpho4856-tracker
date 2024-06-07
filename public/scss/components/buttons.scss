@@ -1,0 +1,7 @@
+//Separate SCSS file for Design System components for clearer code & file structure
+//Includes styling for buttonsr
+
+@use '/public/scss/base/_colours.scss'; //Imports separate SCSS file containing brand colours
+@use '/public/scss/base/_typography.scss'; //Imports separate SCSS file containing font-family
+
+/*PRIMARY BUTTON STYLING*/

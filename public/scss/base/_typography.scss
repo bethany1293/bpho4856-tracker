@@ -44,12 +44,7 @@
 }
 
 
-/*APPLYING FONT FAMILY, FONT SIZE, STYLING - To standardised elements e.g. h1-h6, logo font*/
-.brand-font { //Font of Brand Logo
-    font-family: 'Dongle', sans-serif; //Applied Dongle Regular
-    text-decoration: none; //Removed the underline from the text
-}
-
+/*APPLYING FONT FAMILY, FONT SIZE, STYLING - To standardised elements i.e. h1-h6*/
 h1 {
     @include nunito-font($boldness: 700); //Nunito Bold
 }

@@ -1,5 +1,20 @@
+@charset 'UTF-8'; //Forces UTF-8 encoding, recommended by https://sass-guidelin.es/
+
 //@Import will be depreciated
-@use 'reset';
-@use 'layout';
-@use 'typography';
-@use 'colours';
+//Importing other SCSS files and partials
+
+//Boilerplate code - reset, brand fonts and colours
+@use 'base/reset.scss';
+@use 'base/typography.scss';
+@use 'base/colours.scss';
+
+//Layout components - header, navigation menu, sidebar for navigation
+@use 'layout/header.scss';
+@use 'layout/navigation.scss';
+@use 'layout/sidebar.scss';
+
+//Smaller components - buttons
+@use 'components/buttons.scss';
+
+//Styling for pages - despite it being an SPA
+@use 'pages/home.scss';
