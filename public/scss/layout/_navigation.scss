@@ -15,16 +15,24 @@
 //Sourced from (https://stackoverflow.com/questions/73172387/use-not-working-in-sass-to-import-variables-but-import-is-working)
 
 .navbar { //Selects <nav>
-    @include typography.nunito-font($boldness: 500); //Nunito Regular
+    display:flex; //Creates a flexbox container
+    flex-direction: column; //Makes menu items display vertically
+    gap: 2em; //Adds vertical spacing between each menu item
+    height:100vw; //Makes sidebar span the whole viewport height
+    width: 15%; 
+    @include typography.nunito-font($boldness: 500); //Nunito Medium
     background-color: colours.$primary-colour; //Dark Purple, #4B4263 
-    height:100%;
-    width: 30%;
     color: colours.$neutral-colour; //White, #FFFFFF
+    padding:2em; //Adds padding around the menu items
 }
 
-/*NAVIGATION BAR ITEMS*/
-//Used BEM naming convention for better code readability
-.navbar__list { //Menu items in navigation
-    //Removes bullet points from the unordered list (https://www.w3schools.com/howto/howto_css_list_without_bullets.asp)
-    list-style-type: none;
+.navbar__item {
+    display:flex; //Flexbox in a flexbox to put menu item text and icon on the same line
+    flex-direction: row; //Displays icon and text horizontally
+    gap:1em;
+
+    img { //Menu item icon
+        width:1.5em; //About 24px, in accordance with high-fidelity wireframe
+        height:1.5em; //About 24px, in accordance with high-fidelity wireframe
+    }
 }

@@ -36,6 +36,12 @@ Download the latest version of Node.JS. (Express.JS, Parcel, SCSS setup (???))
 
 ## Prototype vs Mockup changes
 
+Navigation Bar:
+
+- Increased the size of the hamburger menu icon from 25px (~1.5625em) to 3em (~48px) for accessibility reasons, visibility and to match the logo font size for visual balance.
+
+- Increased the spacing between the 'BakeTrove' logo font and the hamburger icon from 19px (~1.1875em) to 1.5em (~24px).
+
 ## Reflection
 
 ### Challenges
