@@ -9,7 +9,7 @@ header {
     display:flex; //Applies flexbox to the header container
     align-items: center; //Aligns logo and hamburger menu to be centred on the same horizontal line 
     gap:1.5em; //Adds a gap between the logo and hamburger menu
-    border-bottom: solid; //Adds a border to the bottom
+    border-bottom: 1px solid colours.$border-colour; //Adds a border to the bottom
     width:100%; //Container spans the whole width of the screen
 }
 
