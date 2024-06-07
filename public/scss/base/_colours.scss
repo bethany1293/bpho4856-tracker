@@ -1,5 +1,6 @@
 //Separate SCSS file for colours - used for better code reusability and to simplify the code
 //SCSS Variables to store brand colours
 //HSL notation used instead of Hexadecimal for better readability, in accordance with SCSS standards (https://sass-guidelin.es/)
-$primary-colour: hsl(256.36, 20%, 32.35%); //Dark Purple
-$neutral-colour: hsl(0, 0%, 100%); //White
+$primary-colour: hsl(256.36, 20%, 32.35%); //Dark Purple #4B4263
+$neutral-colour: hsl(0, 0%, 100%); //White #FFFFFF
+$logo-colour: hsl(240, 40.17%, 45.88%) //Bluish Purple #4646A4

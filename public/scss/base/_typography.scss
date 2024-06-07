@@ -43,7 +43,6 @@
     font-style: normal;
 }
 
-
 /*APPLYING FONT FAMILY, FONT SIZE, STYLING - To standardised elements i.e. h1-h6*/
 h1 {
     @include nunito-font($boldness: 700); //Nunito Bold

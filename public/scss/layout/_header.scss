@@ -4,7 +4,23 @@
 @use '/public/scss/base/_colours.scss'; //Imports separate SCSS file containing brand colours
 
 /*HEADER STYLING*/
-.logo { //Brand Logo in header
+//Flexbox knowledge sourced from https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+header {
+    display:flex; //Applies flexbox to the header container
+    align-items: center; //Aligns logo and hamburger menu to be centred on the same horizontal line 
+    gap:1.5em; //Adds a gap between the logo and hamburger menu
+    border-bottom: solid; //Adds a border to the bottom
+    width:100%; //Container spans the whole width of the screen
+}
+
+.header__hamburger {
+    width: 3em; //Increased the width of the hamburger
+    margin-left:2em; //Added a gap between the hamburger menu icon and the logo
+}
+
+.header__logo { //Brand Logo in header
     font-family: 'Dongle', sans-serif; //Applied Dongle Regular to logo font
+    color: colours.$logo-colour;
+    font-size: 3em; //Converted 48px to 3em using a calculator (https://www.w3schools.com/tags/ref_pxtoemconversion.asp)
     text-decoration: none; //Removed the underline from the text
 }

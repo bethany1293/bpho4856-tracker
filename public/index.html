@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type= "text/css" href="./scss/main.scss">
+    <script src="script.js"></script>
 </head>
+
 <body>
-        <!--Semantic HTML tags used e.g. header, aside, main, for screenreaders and accessibility purposes-->
-        <header>
-            <!--Add icon of hamburger menu here-->
-            <a class="logo" href = '#'>BakeTrove</a>
-        </header>
-    
-        <!--Semantic 'aside' tag used to indicate content on the side of the main content-->
-        <!--BEM naming convention for CSS classes used for code readability-->
-        <!--BEM naming learned from https://sparkbox.com/foundry/bem_by_example-->
-        <aside>
-            <!--Standardised collapsible side navigation bar - utilised despite the app being an SPA-->
-            <nav class = "navbar">
-                <!--Unordered list to keep all content in one vertical line-->
-                <ul class = "navigation__list">
-                    <li><img src="../assets/dashboard-icon.png" alt="Dashboard icon"/><p>Dashboard</p></li>
-                    <li><img src="../assets/recipes-icon.png" alt="Recipes icon"/><p>Dessert Recipes</p></li>
-                    <li><img src="../assets/add-recipelog-icon.png" alt="Add Recipe icon"/>Add a Recipe</li>
-                    <li><img src="../assets/add-recipe-icon.png" alt="Add Recipe Log icon"/>Add a Recipe Log</li>
-                </ul>
-            </nav>
-        </aside>
+    <!--Semantic HTML tags used e.g. header, aside, main, for screenreaders and accessibility purposes-->
+    <!--BEM naming convention for CSS classes used for code readability e.g. header__logo-->
+    <!--BEM naming learned from https://sparkbox.com/foundry/bem_by_example-->
+    <header>
+        <img class="header__hamburger" src="https://img.icons8.com/?size=100&id=30UIOfuJpZnZ&format=png&color=000000" alt="hamburger-menu"/>
+        <a class="header__logo" href = '#'>BakeTrove</a>
+    </header>
 
-        <!--Main tag to indicate the main content of the page-->
-        <main>
-            <h1>Dashboard</h1>
-            <button>Add Recipe</button>
-            <button>Add Recipe Log</button>
-            <section>
-                <h2>Last Used Recipes</h2>
-                <button>View More</button>
-                <article>
-                    <p>Japanese Cheesecake</p>
-                </article>
-                <article>
-                    <p>Kahlua buns stuffed w/ mascarpone creamand salted pistachio powder</p>
-                </article>
-                <article>
-                    <p>30 minute Chewy Chocolate Cookies</p>
-                </article>
-            </section>
+    <!--Semantic 'aside' tag used to indicate content on the side of the main content-->
+    <aside>
+        <!--Standardised collapsible side navigation bar - utilised despite the app being an SPA-->
+        <nav class = "navbar">
+            <!--Unordered list to keep all content in one vertical line-->
+            <ul class = "navigation__list">
+                <li><img src="../assets/dashboard-icon.png" alt="Dashboard icon"/><p>Dashboard</p></li>
+                <li><img src="../assets/recipes-icon.png" alt="Recipes icon"/><p>Dessert Recipes</p></li>
+                <li><img src="../assets/add-recipelog-icon.png" alt="Add Recipe icon"/>Add a Recipe</li>
+                <li><img src="../assets/add-recipe-icon.png" alt="Add Recipe Log icon"/>Add a Recipe Log</li>
+            </ul>
+        </nav>
+    </aside>
 
-            <section>
-                <h2>Dessert Rating Log</h2>
-                <button>This Week</button>
-                <button>This Month</button>
-                <button>This Year</button>
-            </section>
+    <!--Main tag to indicate the main content of the page-->
+    <main>
+        <h1>Dashboard</h1>
+        <button>Add Recipe</button>
+        <button>Add Recipe Log</button>
+        <section>
+            <h2>Last Used Recipes</h2>
+            <button>View More</button>
+            <article>
+                <p>Japanese Cheesecake</p>
+            </article>
+            <article>
+                <p>Kahlua buns stuffed w/ mascarpone creamand salted pistachio powder</p>
+            </article>
+            <article>
+                <p>30 minute Chewy Chocolate Cookies</p>
+            </article>
+        </section>
 
-            <h2>Areas to Improve</h2>
-            <section>
-                <h2>Desserts</h2>
-            </section>
+        <section>
+            <h2>Dessert Rating Log</h2>
+            <button>This Week</button>
+            <button>This Month</button>
+            <button>This Year</button>
+        </section>
 
-            <section>
-                <h2>Baking Techniques</h2>
-            </section>
-        </main>
+        <h2>Areas to Improve</h2>
+        <section>
+            <h2>Desserts</h2>
+        </section>
+
+        <section>
+            <h2>Baking Techniques</h2>
+        </section>
+    </main>
 </body>
 </html>
