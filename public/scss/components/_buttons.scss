@@ -9,8 +9,9 @@
     background-color: colours.$button-colour;
     color: colours.$neutral-colour;
     @include typography.nunito-font($boldness:300); //Applies Nunito Light font
+    font-size: 1.125em; //Around 18px - in accordance with design
     height:3.75em; //Around 60px - in accordance with design
-    padding:0.625em; //Around 10px - in accordance with design
+    padding: 1em; //Around 16px - increased value compared to design
     border-radius:0.3125em; //Around 5px for border-radius, in accordance with design
     border:none;
     float: right;

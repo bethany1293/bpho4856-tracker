@@ -1,4 +1,5 @@
 @use '/public/scss/base/_colours.scss'; //Imports separate SCSS file containing colours
+@use '/public/scss/base/_typography.scss'; //Imports separate SCSS file containing font-family
 
 .container {
     display:flex;
@@ -15,13 +16,48 @@ main {
     background-color: colours.$background-colour; //Light grey #F6F6F6
 }
 
-.btn__container {
+.btn__container { //Selects 'Dashboard' <h1> and CTAs to add a recipe or recipe log
     display:flex;
-    justify-content:flex-end;
-    gap:1em;
+    justify-content:flex-end; //Positions flexbox items from the right
+    gap:1em; //Adds a gap between the buttons
+    align-items: center; //Aligns <h1> with the button text
+    padding-bottom:2em;
 
     h1 {
         position:absolute; //Used to keep the Dashboard heading to the left
         left:8.7em; 
     }
+}
+
+.recent-recipes {
+    background-color: colours.$background-colour--card; //Close to White, #FCFCFC
+    border-radius:1em; //Rounded corners
+    padding:2em 3em 3.5em;
+    margin-bottom:4em;
+    box-shadow: 0 0.25em 0.25em colours.$box-shadow-colour;
+}
+
+.recent-recipes--title {
+    display:flex;
+    align-items:center;
+    gap:68em;
+}
+
+.recent-recipes--cards {
+    display:flex;
+    gap:2em;
+    //justify-content: center;
+    padding-top: 1.5em;
+}
+
+.recent-recipes--card {
+    width: 17em; //About 272px
+}
+
+.recent-recipes--card-text {
+    height:6.25em; //About 100px
+    box-shadow: 0 0.25em 0.25em colours.$box-shadow-colour;
+    padding: 0 1em;
+    @include typography.nunito-font($boldness:600); //Applies Nunito Semi-Bold font
+    font-size:1.125em; //About 18px
 }

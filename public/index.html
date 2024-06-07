@@ -27,22 +27,22 @@
             <!--Standardised collapsible side navigation bar - utilised despite the app being an SPA-->
             <nav class = "navbar">
                 <section class="navbar__item">
-                    <img src="../assets/dashboard-icon.png" alt="Dashboard icon"/>
+                    <img src="../assets/icons/dashboard-icon.png" alt="Dashboard icon"/>
                     <p>Dashboard</p>
                 </section>
 
                 <section class="navbar__item">
-                    <img src="../assets/recipes-icon.png" alt="Recipes icon"/>
+                    <img src="../assets/icons/recipes-icon.png" alt="Recipes icon"/>
                     <p>Dessert Recipes</p>
                 </section>
 
                 <section class="navbar__item">
-                    <img src="../assets/add-recipelog-icon.png" alt="Add Recipe icon"/>
+                    <img src="../assets/icons/add-recipe-icon.png" alt="Add Recipe icon"/>
                     <p>Add a Recipe</p>
                 </section>
 
                 <section class="navbar__item">
-                    <img src="../assets/add-recipe-icon.png" alt="Add Recipe Log icon"/>
+                    <img src="../assets/icons/add-recipe-icon.png" alt="Add Recipe Log icon"/>
                     <p>Add a Recipe Log</p>
                 </section>
             </nav>
@@ -56,18 +56,48 @@
                 <button class="btn--primary">Add Recipe Log +</button>
             </section>
 
-            <section>
-                <h2>Last Used Recipes</h2>
-                <button class="btn--primary">View More</button>
-                <article>
-                    <p>Japanese Cheesecake</p>
-                </article>
-                <article>
-                    <p>Kahlua buns stuffed w/ mascarpone creamand salted pistachio powder</p>
-                </article>
-                <article>
-                    <p>30 minute Chewy Chocolate Cookies</p>
-                </article>
+            <section class="recent-recipes">
+                <section class="recent-recipes--title">
+                    <h2>Last Used Recipes</h2>
+                    <button class="btn--primary">View More</button>
+                </section>
+
+                <section class="recent-recipes--cards">
+                    <article class="recent-recipes--card">
+                        <img src="/assets/recipe-images/chocolate-cookies.png" alt="chocolate-cookies"/>
+                        <section class="recent-recipes--card-text">
+                            <p>30 Minute Chewy Chocolate Cookies</p>
+                        </section>
+                    </article>
+                    
+                    <article class="recent-recipes--card">
+                        <img src="/assets/recipe-images/custard-danish.png" alt="custard-danish"/>
+                        <section class="recent-recipes--card-text">
+                            <p>Custard Danish Pastry</p>
+                        </section>
+                    </article>
+
+                    <article class="recent-recipes--card">
+                        <img src="/assets/recipe-images/swiss-roll-cake.png" alt="swiss-roll-cake"/>
+                        <section class="recent-recipes--card-text">
+                            <p>Swiss Roll Cake Recipe</p>
+                        </section>
+                    </article>
+                    
+                    <article class="recent-recipes--card">
+                        <img src="/assets/recipe-images/creme-brulee.png" alt="creme-brulee"/>
+                        <section class="recent-recipes--card-text">
+                            <p>Crème Brûlée (French vanilla custard)</p>
+                        </section>
+                    </article>
+
+                    <article class="recent-recipes--card">
+                        <img src="/assets/recipe-images/japanese-cheesecake.png" alt="japanese-cheesecake"/>
+                        <section class="recent-recipes--card-text">
+                            <p>Japanese Cheesecake</p>
+                        </section>
+                    </article>
+                </section>
             </section>
 
             <section>
