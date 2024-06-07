@@ -1,11 +1,16 @@
+@use '/public/scss/base/_colours.scss'; //Imports separate SCSS file containing colours
+
 .container {
     display:flex;
     flex-direction: row;
     width:100%;
     height:100%;
     gap:2em;
+    background-color: colours.$background-colour; //Light grey #F6F6F6
 }
 
 main {
     padding:2em;
+    width:80%;
+    background-color: colours.$background-colour; //Light grey #F6F6F6
 }
