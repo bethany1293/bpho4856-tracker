@@ -14,3 +14,14 @@ main {
     width:80%;
     background-color: colours.$background-colour; //Light grey #F6F6F6
 }
+
+.btn__container {
+    display:flex;
+    justify-content:flex-end;
+    gap:1em;
+
+    h1 {
+        position:absolute; //Used to keep the Dashboard heading to the left
+        left:8.7em; 
+    }
+}

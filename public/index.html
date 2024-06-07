@@ -18,6 +18,9 @@
         <a class="header__logo" href = '#'>BakeTrove</a>
     </header>
 
+    <!--Container created to place the main content next to the navigation side bar with flexbox-->
+    <!--Learned to do this from https://stackoverflow.com/questions/68786064/how-to-align-nav-bar-to-left-and-make-content-display-on-right-side-without-u-->
+
     <section class="container">
         <!--Semantic 'aside' tag used to indicate content on the side of the main content-->
         <aside>
@@ -47,9 +50,12 @@
 
         <!--Main tag to indicate the main content of the page-->
         <main>
-            <h1>Dashboard</h1>
-            <button class="btn--primary">Add Recipe</button>
-            <button class="btn--primary">Add Recipe Log</button>
+            <section class="btn__container">
+                <h1>Dashboard</h1>
+                <button class="btn--primary">Add Recipe +</button>
+                <button class="btn--primary">Add Recipe Log +</button>
+            </section>
+
             <section>
                 <h2>Last Used Recipes</h2>
                 <button class="btn--primary">View More</button>
