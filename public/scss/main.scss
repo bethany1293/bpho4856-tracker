@@ -6,12 +6,12 @@
 //SCSS Folder Architecture aligns with standards - https://sass-guidelin.es/
 //Created 'partial SCSS files' from seeing a setup guide https://sass-lang.com/guide/#:~:text=A%20partial%20is%20a%20Sass,used%20with%20the%20%40use%20rule.
 
-//Boilerplate code - reset, brand fonts and colours
+//Boilerplate code - SCSS reset, brand fonts, and brand colours
 @use 'base/reset.scss';
 @use 'base/typography.scss';
 @use 'base/colours.scss';
 
-//Layout components - header, navigation menu, sidebar for navigation
+//Layout components - styling for header, navigation menu, sidebar for navigation
 @use 'layout/header.scss';
 @use 'layout/navigation.scss';
 @use 'layout/forms.scss';
@@ -19,5 +19,5 @@
 //Smaller components - buttons
 @use 'components/buttons.scss';
 
-//Styling for pages - despite it being an SPA
-@use 'pages/home.scss';
+//Styling for different views in the SPA
+@use 'views/dashboard.scss';

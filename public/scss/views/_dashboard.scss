@@ -64,3 +64,10 @@ main {
     @include typography.nunito-font($boldness:600); //Applies Nunito Semi-Bold font
     font-size:1.125em; //About 18px
 }
+
+
+#app {
+    margin: 2em;
+    line-height: 1.5;
+    font-weight: 500;
+}
