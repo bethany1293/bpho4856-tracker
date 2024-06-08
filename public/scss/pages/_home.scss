@@ -45,12 +45,16 @@ main {
 .recent-recipes--cards {
     display:flex;
     gap:2em;
-    //justify-content: center;
     padding-top: 1.5em;
 }
 
 .recent-recipes--card {
     width: 17em; //About 272px
+}
+
+.recent-recipes--card:hover { //Hover state CSS
+    box-shadow: 0 0.5em 0.25em colours.$box-shadow-colour;
+    cursor:pointer;
 }
 
 .recent-recipes--card-text {
