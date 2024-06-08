@@ -1,0 +1,39 @@
+@use '/public/scss/base/_typography.scss'; //Imports separate SCSS file containing font-family
+
+/*Modal window*/
+dialog {
+    width:50em; //Increases sizing of the modal form
+    height:80vh;
+}
+
+/*Modal window form container*/
+.add-recipe-form {
+    display:flex; //Adds flexbox container
+    flex-direction: column; //Makes the form elements display from top to bottom
+    gap:2em; //Adds a gap between the heading, input fields and buttons
+    padding:0.5em;
+}
+
+/*Container for recipe data*/
+.recipe-data {
+    display:flex;
+    flex-direction:column;
+      label {
+        font-family:'Dongle', sans-serif;
+        font-size:2em; //About 20px
+        line-height: 0.75em;
+      }
+      input {
+        margin-bottom:1.5em; //Adds spacing between each input field
+        padding:0.5em;
+        @include typography.nunito-font($boldness: 600); //Applies Nunito Semi-Bold
+        font-size:1.125em; //About 18px
+      }
+}
+
+/*Container for form buttons*/
+.btn--form__container{
+    display:flex;
+    flex-direction: row;
+    gap:1em;
+}

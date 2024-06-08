@@ -21,3 +21,37 @@
     box-shadow: 0 0.5em 0.25em colours.$box-shadow-colour;
     cursor:pointer;
 }
+
+/*PRIMARY FORM BUTTON STYLING*/
+.btn--form {
+    background-color: colours.$button-colour;
+    color: colours.$neutral-colour;
+    @include typography.nunito-font($boldness:400); //Applies Nunito Regular font
+    font-size: 1.125em; //Around 18px - in accordance with design
+    height:3.125em; //Around 50px
+    width:5em;
+    border-radius:0.3125em; //Around 5px for border-radius, in accordance with design
+    border:none;
+}
+
+.btn--form:hover{ //Hover state CSS
+    box-shadow: 0 0.5em 0.25em colours.$box-shadow-colour;
+    cursor:pointer;
+}
+
+/*SECONDARY FORM BUTTON STYLING*/
+.btn--form--secondary {
+    background-color: colours.$neutral-colour;
+    color: colours.$button-colour;
+    @include typography.nunito-font($boldness:500); //Applies Nunito Medium font
+    font-size: 1.125em; //Around 18px - in accordance with design
+    height:3.125em; //Around 50px
+    width:5em;
+    border-radius:0.3125em; //Around 5px for border-radius, in accordance with design
+    border: 0.2em solid;
+}
+
+.btn--form--secondary:hover{ //Hover state CSS
+    box-shadow: 0 0.5em 0.25em colours.$box-shadow-colour;
+    cursor:pointer;
+}

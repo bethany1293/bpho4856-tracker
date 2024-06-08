@@ -14,6 +14,7 @@
 //Layout components - header, navigation menu, sidebar for navigation
 @use 'layout/header.scss';
 @use 'layout/navigation.scss';
+@use 'layout/forms.scss';
 
 //Smaller components - buttons
 @use 'components/buttons.scss';

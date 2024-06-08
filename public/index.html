@@ -44,30 +44,35 @@
                 <!--Includes modal, form element, cancel button and submit button-->
                 <!--Source:https://blog.webdevsimplified.com/2023-04/html-dialog/-->
                 <dialog>
-                    <form>
+                    <form class="add-recipe-form">
                         <h2>Add a Recipe</h2>
-                        <label for="recipe-name">Dessert Name</label>
-                        <input type="text" name="recipe-name"/>
-                        <label for="recipe-category">Recipe Category</label>
-                        <input type="text" name="recipe-category"/>
-                        <label for="recipe-image">Recipe Image</label>
-                        <input type="text" name="recipe-image"/>
-                        <label for="recipe-by-URL">Get Recipe by URL</label>
-                        <input type="text" name="recipe-by-url"/>
-                        <label for="ingredients">Ingredients</label>
-                        <input type="text" name="ingredients"/>
-                        <label for="method">Method</label>
-                        <input type="text" name="method"/>
-                        <label for="baking-techniques">Baking Techniques</label>
-                        <select name="baking-techniques" size="5" multiple>
-                            <option value="piping">Piping</option>
-                            <option value="kneading">Kneading</option>
-                            <option value="meringue">Meringue</option>
-                            <option value="tempering">Tempering</option>
-                            <option value="choux-pastry">Choux Pastry</option>
-                        </select>
-                        <button formmethod="dialog" type="submit">Cancel</button>
-                        <button type="submit">Submit</button>
+                        <section class="recipe-data">
+                            <label for="recipe-name">Dessert Name</label>
+                            <input id="recipe-name" type="text" name="recipe-name"/>
+                            <label for="recipe-category">Recipe Category</label>
+                            <input id="recipe-category" type="text" name="recipe-category"/>
+                            <label for="recipe-image">Recipe Image</label>
+                            <input id="recipe-image" type="text" name="recipe-image"/>
+                            <label for="recipe-by-URL">Get Recipe by URL</label>
+                            <input id="recipe-by-URL" type="text" name="recipe-by-url"/>
+                            <label for="ingredients">Ingredients</label>
+                            <input id="ingredients" type="text" name="ingredients"/>
+                            <label for="method">Method</label>
+                            <input id="method" type="text" name="method"/>
+                            <label for="baking-techniques">Baking Techniques</label>
+                            <select id="baking-techniques" name="baking-techniques" size="5" multiple>
+                                <option value="piping">Piping</option>
+                                <option value="kneading">Kneading</option>
+                                <option value="meringue">Meringue</option>
+                                <option value="tempering">Tempering</option>
+                                <option value="choux-pastry">Choux Pastry</option>
+                            </select>
+                        </section>
+                        <section class="btn--form__container">
+                            <button class="btn--form" type="submit">Submit</button>
+                            <button class="btn--form--secondary" formmethod="dialog" type="submit">Cancel</button>
+                        </section>
+
                     </form>
                 </dialog>
 
