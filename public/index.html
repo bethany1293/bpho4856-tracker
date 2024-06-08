@@ -16,187 +16,110 @@
             <img class="header__hamburger" src="https://img.icons8.com/?size=100&id=30UIOfuJpZnZ&format=png&color=000000" alt="hamburger-menu"/>
             <a href = '/' class="header__logo" data-link>BakeTrove</a>
         </header>
-        
-        <!--Container created to use flexbox and place the main content next to the navigation side bar with flexbox-->
-        <!--Learned to do this from https://stackoverflow.com/questions/68786064/how-to-align-nav-bar-to-left-and-make-content-display-on-right-side-without-u-->
-
-        <section class="container">
-            <!--Semantic 'aside' tag used to indicate content on the side of the main content-->
-            <aside>
-                <!--Standardised collapsible side navigation bar - utilised despite the app being an SPA-->
-                <nav class = "navbar">
-                    <section class="navbar__item">
-                        <img src="../assets/icons/dashboard-icon.png" alt="icon-showing-dashboard-tiles"/>
-                        <p>Dashboard</p>
-                    </section>
-
-                    <section class="navbar__item">
-                        <img src="../assets/icons/recipes-icon.png" alt="icon-showing-a-spoon-and-knife-on-a-book"/>
-                        <p>My Recipes</p>
-                    </section>
-
-                    <section class="navbar__item">
-                        <img src="../assets/icons/baking-logs-list.png" alt="icon-showing-a-list-with-a-cupcake-next-to-it"/>
-                        <p>My Baking Logs</p>
-                    </section>
-                </nav>
-            </aside>
 
             <!--Main tag to indicate the main content of the page-->
             <main>
-                <section class="btn__container">
-                    <div class="btn__container--title">
-                        <!--Main Heading of homepage-->
-                        <h1>Dashboard</h1>
-                    </div>
-                    <!--Buttons to Add a recipe & Add a Recipe Log-->
-                    <!--ID for DOM manipulation and classes for CSS styling-->
-                    <button id="add-recipe-btn" class="btn--primary">Add Recipe +</button>
-                    <button id="add-recipe-log-btn" class="btn--primary">Add Recipe Log +</button>
-                </section>
-
-                <!--HTML for the modal form to 'Add a recipe'-->
-                <!--Used code from part of a tutorial to create the modal form-->
-                <!--Includes modal, form element, cancel button and submit button-->
-                <!--Source:https://blog.webdevsimplified.com/2023-04/html-dialog/-->
-                <dialog id="add-recipe-dialog">
-                    <form class="add-recipe-form">
-                        <h2>Add a Recipe</h2>
-                        <section class="recipe-data">
-                            <label for="recipe-name">Dessert Recipe Name</label>
-                            <input id="recipe-name" type="text" name="recipe-name"/>
-                            <label for="recipe-category">Recipe Category</label>
-                            <select id="recipe-category" name="recipe-category">
-                                <option value="Cakes">Cakes</option>
-                                <option value="Cookies">Cookies</option>
-                                <option value="Pastries">Pastries</option>
-                                <option value="Pies">Pies</option>
-                                <option value="Muffins">Muffins</option>
-                            </select>
-                            <label for="recipe-image">Recipe Image</label>
-                            <input id="recipe-image" type="text" name="recipe-image"/>
-                            <label for="recipe-by-URL">Get Recipe by URL</label>
-                            <input id="recipe-by-URL" type="text" name="recipe-by-url"/>
-                            <label for="ingredients">Ingredients</label>
-                            <input id="ingredients" type="text" name="ingredients"/>
-                            <label for="method">Method</label>
-                            <input id="method" type="text" name="method"/>
-                            <label for="baking-techniques">Baking Techniques</label>
-                            <select id="baking-techniques" name="baking-techniques" size="5" multiple>
-                                <option value="piping">Piping</option>
-                                <option value="kneading">Kneading</option>
-                                <option value="meringue">Meringue</option>
-                                <option value="tempering">Tempering</option>
-                                <option value="choux-pastry">Choux Pastry</option>
-                            </select>
+                <section class="main__container">
+                    <section class="row1">
+                        <section class="col1">
+                            <!--Main Heading of homepage-->
+                            <h1>Dashboard</h1>
                         </section>
-                        <section class="btn--form__container">
-                            <button class="btn--form" type="submit">Submit</button>
-                            <button class="btn--form--secondary" formmethod="dialog" type="submit">Cancel</button>
+                        <section class="col2">
+                            <!--Button to Add a recipe-->
+                            <!--ID for DOM manipulation and classes for CSS styling-->
+                            <button id="add-recipe-btn" class="btn--primary">Add Recipe +</button>
                         </section>
-                    </form>
-                </dialog>
-
-                <!--HTML for the modal form to 'Add a recipe log'-->
-                <dialog id="add-recipe-log-dialog">
-                    <form class="add-recipe-log-form">
-                        <h2>Add a Recipe Log</h2>
-                        <section class="recipe-data">
-                            <label for="recipe-name--log">Dessert Recipe Name</label>
-                            <input id="recipe-name--log" type="text" name="recipe-name--log"/>
-                            <label for="recipe-category--log">Recipe Category</label>
-                            <input id="recipe-category--log" type="text" name="recipe-category--log"/>
-                            <label for="recipe-image--log">Dessert Image</label>
-                            <input id="recipe-image--log" type="text" name="recipe-image--log"/>
-                            <h3>Baking Result</h3>
-                            <label for="taste--log">Taste</label>
-                            <input id="taste--log" type="text" name="taste--log"/>
-                            <label for="appearance--log">Dessert Image</label>
-                            <input id="appearance--log" type="text" name="appearance--log"/>
-                            <label for="recipe-outcome--log">Outcome</label>
-                            <input for="recipe-outcome--log" type="textarea" name="recipe-outcome--log">
-                            <h3>Reflection</h3>
-                            <label for="baking-techniques--log">Techniques to Improve</label>
-                            <select id="baking-techniques--log" name="baking-techniques--log" size="5" multiple>
-                                <option value="piping">Piping</option>
-                                <option value="kneading">Kneading</option>
-                                <option value="meringue">Meringue</option>
-                                <option value="tempering">Tempering</option>
-                                <option value="choux-pastry">Choux Pastry</option>
-                            </select>
-                            <label for="reflection--log">What to do next time?</label>
-                            <input for="reflection--log" type="textarea" name="reflection--log">
-                        </section>
-                        <section class="btn--form__container">
-                            <button class="btn--form" type="submit">Submit</button>
-                            <button class="btn--form--secondary" formmethod="dialog" type="submit">Cancel</button>
-                        </section>
-                    </form>
-                </dialog>
-
-                <!--Last Used Recipes section-->
-                <section class="recent-recipes">
-                    <section class="recent-recipes--title">
-                        <h2>Last Used Recipes</h2>
-                        <button class="btn--primary">View More</button>
                     </section>
 
-                    <!--Different recipes displayed as UI cards w/ image and recipe name-->
-                    <section class="recent-recipes--cards">
-                        <article class="recent-recipes--card">
-                            <img src="../assets/recipe-images/chocolate-cookies.png" alt="chocolate-cookies"/>
-                            <section class="recent-recipes--card-text">
-                                <p>30 Minute Chewy Chocolate Cookies</p>
+                    <!--HTML for the modal form to 'Add a recipe'-->
+                    <!--Used code from part of a tutorial to create the modal form-->
+                    <!--Includes modal, form element, cancel button and submit button-->
+                    <!--Source:https://blog.webdevsimplified.com/2023-04/html-dialog/-->
+                    <dialog id="add-recipe-dialog">
+                        <form class="add-recipe-form">
+                            <h2>Add a Recipe</h2>
+                            <section class="recipe-data">
+                                <label for="recipe-name">Dessert Recipe Name</label>
+                                <input id="recipe-name" type="text" name="recipe-name"/>
+                                <label for="recipe-category">Recipe Category</label>
+                                <select id="recipe-category" name="recipe-category">
+                                    <option value="Cakes">Cakes</option>
+                                    <option value="Cookies">Cookies</option>
+                                    <option value="Pastries">Pastries</option>
+                                    <option value="Pies">Pies</option>
+                                    <option value="Muffins">Muffins</option>
+                                </select>
+                                <label for="recipe-image">Recipe Image</label>
+                                <input id="recipe-image" type="text" name="recipe-image"/>
+                                <label for="recipe-by-URL">Get Recipe by URL</label>
+                                <input id="recipe-by-URL" type="text" name="recipe-by-url"/>
+                                <label for="ingredients">Ingredients</label>
+                                <input id="ingredients" type="text" name="ingredients"/>
+                                <label for="method">Method</label>
+                                <input id="method" type="text" name="method"/>
+                                <label for="baking-techniques">Baking Techniques</label>
+                                <select id="baking-techniques" name="baking-techniques" size="5" multiple>
+                                    <option value="piping">Piping</option>
+                                    <option value="kneading">Kneading</option>
+                                    <option value="meringue">Meringue</option>
+                                    <option value="tempering">Tempering</option>
+                                    <option value="choux-pastry">Choux Pastry</option>
+                                </select>
                             </section>
-                        </article>
-                        
-                        <article class="recent-recipes--card">
-                            <img src="/assets/recipe-images/custard-danish.png" alt="custard-danish"/>
-                            <section class="recent-recipes--card-text">
-                                <p>Custard Danish Pastry</p>
+                            <section class="btn--form__container">
+                                <button class="btn--form" type="submit">Submit</button>
+                                <button class="btn--form--secondary" formmethod="dialog" type="submit">Cancel</button>
                             </section>
-                        </article>
+                        </form>
+                    </dialog>
 
-                        <article class="recent-recipes--card">
-                            <img src="/assets/recipe-images/swiss-roll-cake.png" alt="swiss-roll-cake"/>
-                            <section class="recent-recipes--card-text">
-                                <p>Swiss Roll Cake Recipe</p>
-                            </section>
-                        </article>
-                        
-                        <article class="recent-recipes--card">
-                            <img src="/assets/recipe-images/creme-brulee.png" alt="creme-brulee"/>
-                            <section class="recent-recipes--card-text">
-                                <p>Crème Brûlée (French vanilla custard)</p>
-                            </section>
-                        </article>
+                    <!--Last Used Recipes section-->
+                    <section class="recent-recipes">
+                        <section class="recent-recipes--title">
+                            <h2>Last Used Recipes</h2>
+                        </section>
 
-                        <article class="recent-recipes--card">
-                            <img src="/assets/recipe-images/japanese-cheesecake.png" alt="japanese-cheesecake"/>
-                            <section class="recent-recipes--card-text">
-                                <p>Japanese Cheesecake</p>
-                            </section>
-                        </article>
+                        <!--Different recipes displayed as UI cards w/ image and recipe name-->
+                        <section class="recent-recipes--cards">
+                            <article class="recent-recipes--card">
+                                <img src="../assets/recipe-images/chocolate-cookies.png" alt="chocolate-cookies"/>
+                                <section class="recent-recipes--card-text">
+                                    <p>30 Minute Chewy Chocolate Cookies</p>
+                                </section>
+                            </article>
+                            
+                            <article class="recent-recipes--card">
+                                <img src="/assets/recipe-images/custard-danish.png" alt="custard-danish"/>
+                                <section class="recent-recipes--card-text">
+                                    <p>Custard Danish Pastry</p>
+                                </section>
+                            </article>
+
+                            <article class="recent-recipes--card">
+                                <img src="/assets/recipe-images/swiss-roll-cake.png" alt="swiss-roll-cake"/>
+                                <section class="recent-recipes--card-text">
+                                    <p>Swiss Roll Cake Recipe</p>
+                                </section>
+                            </article>
+                            
+                            <article class="recent-recipes--card">
+                                <img src="/assets/recipe-images/creme-brulee.png" alt="creme-brulee"/>
+                                <section class="recent-recipes--card-text">
+                                    <p>Crème Brûlée (French vanilla custard)</p>
+                                </section>
+                            </article>
+
+                            <article class="recent-recipes--card">
+                                <img src="/assets/recipe-images/japanese-cheesecake.png" alt="japanese-cheesecake"/>
+                                <section class="recent-recipes--card-text">
+                                    <p>Japanese Cheesecake</p>
+                                </section>
+                            </article>
+                        </section>
                     </section>
-                </section>
-
-                <section>
-                    <h2>Dessert Rating Log</h2>
-                    <button>This Week</button>
-                    <button>This Month</button>
-                    <button>This Year</button>
-                </section>
-
-                <h2>Areas to Improve</h2>
-                <section>
-                    <h2>Desserts</h2>
-                </section>
-
-                <section>
-                    <h2>Baking Techniques</h2>
                 </section>
             </main>
-        </section>
 
         <!--Script file is placed here so that the DOM loads after the HTML, allowing DOM manipulation-->
         <script src="./script.js"></script>

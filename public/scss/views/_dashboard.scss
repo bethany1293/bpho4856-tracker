@@ -1,6 +1,7 @@
 @use '/public/scss/base/_colours.scss'; //Imports separate SCSS file containing colours
 @use '/public/scss/base/_typography.scss'; //Imports separate SCSS file containing font-family
 
+/*
 .container {
     display:flex;
     flex-direction: row;
@@ -8,24 +9,40 @@
     height:100%;
     gap:3em;
     background-color: colours.$background-colour; //Light grey #F6F6F6
-}
+}*/
 
 main {
-    padding: 2em 0;
-    width:80%;
+    width:100%;
+    height:100%;
     background-color: colours.$background-colour; //Light grey #F6F6F6
 }
 
-.btn__container { //Selects 'Dashboard' <h1> and CTAs to add a recipe or recipe log
-    display:flex;
-    justify-content:flex-end; //Positions flexbox items from the right
-    gap:1em; //Adds a gap between the buttons
-    align-items: center; //Aligns <h1> with the button text
-    padding-bottom:2em;
+.main__container {
+    padding: 3em;
+}
 
-    h1 {
-        margin-inline-end:32em; 
-    }
+img {
+    width:100%;
+}
+
+.row1 {
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    margin-bottom:2em;
+}
+
+.col1 { //Selects 'Dashboard' <h1> and CTA to add a recipe
+    display:flex;
+    flex-direction: column;
+    flex-basis: 90%;
+}
+
+.col2 { //Selects 'Dashboard' <h1> and CTAs to add a recipe or recipe log
+    display:flex;
+    flex-direction: column;
+    flex-basis: 10%;
 }
 
 .recent-recipes {
@@ -44,12 +61,14 @@ main {
 
 .recent-recipes--cards {
     display:flex;
-    gap:2em;
+    flex-direction: row;
+    flex-wrap:wrap;
     padding-top: 1.5em;
 }
 
 .recent-recipes--card {
-    width: 17em; //About 272px
+    width:calc(100%/5);
+    padding:10px;
 }
 
 .recent-recipes--card:hover { //Hover state CSS
@@ -65,9 +84,8 @@ main {
     font-size:1.125em; //About 18px
 }
 
-
-#app {
-    margin: 2em;
-    line-height: 1.5;
-    font-weight: 500;
+@media only screen and (max-width: 700px){
+    .recent-recipes--card {
+        width:calc(100%);
+    }
 }
