@@ -14,7 +14,7 @@
     <!--BEM naming learned from https://sparkbox.com/foundry/bem_by_example-->
     <header>
         <img class="header__hamburger" src="https://img.icons8.com/?size=100&id=30UIOfuJpZnZ&format=png&color=000000" alt="hamburger-menu"/>
-        <a class="header__logo" href = '#'>BakeTrove</a>
+        <a class="header__logo" href = '/'>BakeTrove</a>
     </header>
 
     <!--Container created to place the main content next to the navigation side bar with flexbox-->
@@ -25,25 +25,23 @@
         <aside>
             <!--Standardised collapsible side navigation bar - utilised despite the app being an SPA-->
             <nav class = "navbar">
-                <section class="navbar__item">
-                    <img src="../assets/icons/dashboard-icon.png" alt="Dashboard icon"/>
+                <!--Anchor tag wraps around both the image and text so that both are functional - increases clickarea for usability-->
+                <!--Despite this web app using multiple relative paths, all content is dynamically loaded and it acts as an SPA-->
+                <!--Data-link is sourced from the History API - -->
+                <a href="/" class="navbar__item" data-link>
+                    <img src="../assets/icons/dashboard-icon.png" alt="icon-showing-dashboard-tiles"/>
                     <p>Dashboard</p>
-                </section>
+                </a>
 
-                <section class="navbar__item">
-                    <img src="../assets/icons/recipes-icon.png" alt="Recipes icon"/>
-                    <p>Dessert Recipes</p>
-                </section>
+                <a href="/dessert-recipes-list" class="navbar__item" data-link>
+                    <img src="../assets/icons/recipes-icon.png" alt="icon-showing-a-spoon-and-knife-on-a-book"/>
+                    <p>My Recipes</p>
+                </a>
 
-                <section class="navbar__item">
-                    <img src="../assets/icons/add-recipe-icon.png" alt="Add Recipe icon"/>
-                    <p>Add a Recipe</p>
-                </section>
-
-                <section class="navbar__item">
-                    <img src="../assets/icons/add-recipe-icon.png" alt="Add Recipe Log icon"/>
-                    <p>Add a Recipe Log</p>
-                </section>
+                <a href="/baking-logs-list" class="navbar__item" data-link>
+                    <img src="../assets/icons/baking-logs-list.png" alt="icon-showing-a-list-with-a-cupcake-next-to-it"/>
+                    <p>My Baking Logs</p>
+                </a>
             </nav>
         </aside>
 

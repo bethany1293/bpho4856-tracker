@@ -24,10 +24,11 @@ aside {
     flex-direction: column; //Makes menu items display vertically
     gap: 2em; //Adds vertical spacing between each menu item
     height:100vh; //Makes sidebar span the whole height or container
-    width:80%;
-    @include typography.nunito-font($boldness: 500); //Applies Nunito Medium
-    background-color: colours.$primary-colour; //Dark Purple, #4B4263 
+    width:100%;
+    @include typography.nunito-font($boldness: 300); //Applies Nunito Light font
     color: colours.$neutral-colour; //White, #FFFFFF
+    font-size:1.125em;
+    background-color: colours.$primary-colour; //Dark Purple, #4B4263 
     padding:2em; //Adds padding around the menu items
 }
 
@@ -35,9 +36,16 @@ aside {
     display:flex; //Flexbox in a flexbox to put menu item text and icon on the same line
     flex-direction: row; //Displays icon and text horizontally
     gap:1em;
+    text-decoration: none; //Removes underline from hyperlink
+    color: colours.$neutral-colour; //Applies White or #FFFFFF to automatically applied 'blue' from hyperlink
 
     img { //Menu item icon
         width:1.5em; //About 24px, in accordance with high-fidelity wireframe
         height:1.5em; //About 24px, in accordance with high-fidelity wireframe
     }
+}
+
+//Improves visibility of system status heuristic 
+.navbar__item:hover {
+    background-color: darkmagenta;
 }
