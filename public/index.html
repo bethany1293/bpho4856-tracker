@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type= "text/css" href="./scss/main.scss">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -41,9 +40,33 @@
                     <p>Add a Recipe</p>
                 </section>
 
+                <!--Used code from part of a tutorial to create the modal form-->
+                <!--Includes modal, form element, cancel button and submit button-->
+                <!--Source:https://blog.webdevsimplified.com/2023-04/html-dialog/-->
                 <dialog>
-                    <form method="dialog">
-                        <input type="text"/>
+                    <form>
+                        <h2>Add a Recipe</h2>
+                        <label for="recipe-name">Dessert Name</label>
+                        <input type="text" name="recipe-name"/>
+                        <label for="recipe-category">Recipe Category</label>
+                        <input type="text" name="recipe-category"/>
+                        <label for="recipe-image">Recipe Image</label>
+                        <input type="text" name="recipe-image"/>
+                        <label for="recipe-by-URL">Get Recipe by URL</label>
+                        <input type="text" name="recipe-by-url"/>
+                        <label for="ingredients">Ingredients</label>
+                        <input type="text" name="ingredients"/>
+                        <label for="method">Method</label>
+                        <input type="text" name="method"/>
+                        <label for="baking-techniques">Baking Techniques</label>
+                        <select name="baking-techniques" size="5" multiple>
+                            <option value="piping">Piping</option>
+                            <option value="kneading">Kneading</option>
+                            <option value="meringue">Meringue</option>
+                            <option value="tempering">Tempering</option>
+                            <option value="choux-pastry">Choux Pastry</option>
+                        </select>
+                        <button formmethod="dialog" type="submit">Cancel</button>
                         <button type="submit">Submit</button>
                     </form>
                 </dialog>
@@ -61,7 +84,8 @@
                 <div class="btn__container--title">
                     <h1>Dashboard</h1>
                 </div>
-                <button class="btn--primary">Add Recipe +</button>
+                <!--ID for DOM manipulation and classes for CSS styling-->
+                <button id="add-recipe-btn" class="btn--primary">Add Recipe +</button>
                 <button class="btn--primary">Add Recipe Log +</button>
             </section>
 
@@ -126,5 +150,7 @@
             </section>
         </main>
     </section>
+    <!--Script file is placed here so that the DOM loads after the HTML, allowing DOM manipulation-->
+    <script src="script.js"></script>
 </body>
 </html>
