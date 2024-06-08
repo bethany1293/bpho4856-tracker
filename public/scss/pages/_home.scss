@@ -6,12 +6,12 @@
     flex-direction: row;
     width:100%;
     height:100%;
-    gap:2em;
+    gap:3em;
     background-color: colours.$background-colour; //Light grey #F6F6F6
 }
 
 main {
-    padding:2em;
+    padding: 2em 0;
     width:80%;
     background-color: colours.$background-colour; //Light grey #F6F6F6
 }
@@ -24,8 +24,7 @@ main {
     padding-bottom:2em;
 
     h1 {
-        position:absolute; //Used to keep the Dashboard heading to the left
-        left:8.7em; 
+        margin-inline-end:32em; 
     }
 }
 
@@ -40,7 +39,7 @@ main {
 .recent-recipes--title {
     display:flex;
     align-items:center;
-    gap:68em;
+    gap:70em; //About 1120px
 }
 
 .recent-recipes--cards {

@@ -14,12 +14,19 @@
 //Learned how to import variables from other scss files - by using colours.$primary-colour or namespace.$variable
 //Sourced from (https://stackoverflow.com/questions/73172387/use-not-working-in-sass-to-import-variables-but-import-is-working)
 
+
+aside {
+    width:20em;
+    background-color: colours.$primary-colour; //Dark Purple, #4B4263 
+
+}
+
 .navbar { //Selects <nav>
     display:flex; //Creates a flexbox container
     flex-direction: column; //Makes menu items display vertically
     gap: 2em; //Adds vertical spacing between each menu item
-    height:100vh; //Makes sidebar span the whole viewport height
-    width: 100%; 
+    height:100vh; //Makes sidebar span the whole height or container
+    width:80%;
     @include typography.nunito-font($boldness: 500); //Applies Nunito Medium
     background-color: colours.$primary-colour; //Dark Purple, #4B4263 
     color: colours.$neutral-colour; //White, #FFFFFF
