@@ -39,3 +39,8 @@ h2 {
     @include nunito-font($boldness: 600); //Nunito Semi-Bold
     font-size: 1.875em; //around 30px
 }
+
+h3 {
+    @include nunito-font($boldness: 600); //Nunito Semi-Bold
+    font-size: 1.5em; //around 24px
+}

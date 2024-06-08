@@ -7,7 +7,7 @@ dialog {
 }
 
 /*Modal window form container*/
-.add-recipe-form {
+form {
     display:flex; //Adds flexbox container
     flex-direction: column; //Makes the form elements display from top to bottom
     gap:2em; //Adds a gap between the heading, input fields and buttons
@@ -18,12 +18,14 @@ dialog {
 .recipe-data {
     display:flex;
     flex-direction:column;
-      label {
+
+      label { //Form labels in 'add recipe' and 'add recipe log' forms
         font-family:'Dongle', sans-serif;
         font-size:2em; //About 20px
         line-height: 0.75em;
       }
-      input {
+
+      input { //Form input in 'add recipe' and 'add recipe log' forms
         margin-bottom:1.5em; //Adds spacing between each input field
         padding:0.5em;
         @include typography.nunito-font($boldness: 600); //Applies Nunito Semi-Bold
