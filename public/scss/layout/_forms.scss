@@ -23,6 +23,7 @@ form {
         font-family:'Dongle', sans-serif;
         font-size:2em; //About 20px
         line-height: 0.75em;
+        font-weight: normal !important;
       }
 
       input { //Form input in 'add recipe' and 'add recipe log' forms
@@ -31,11 +32,4 @@ form {
         @include typography.nunito-font($boldness: 600); //Applies Nunito Semi-Bold
         font-size:1.125em; //About 18px
       }
-}
-
-/*Container for form buttons*/
-.btn--form__container{
-    display:flex;
-    flex-direction: row;
-    gap:1em;
 }

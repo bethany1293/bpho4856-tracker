@@ -4,8 +4,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>BakeTrove</title>
         <link rel="stylesheet" type= "text/css" href="./scss/main.scss">
+        <!--Bootstrap and Jquery libraries for -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>        
+
+        <!-- include summernote css/js-->
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     </head>
 
     <body>
@@ -50,16 +58,15 @@
                                     <option value="Pies">Pies</option>
                                     <option value="Muffins">Muffins</option>
                                 </select>
-                                <label for="recipe-image">Recipe Image</label>
-                                <input id="recipe-image" type="text" name="recipe-image"/>
-                                <label for="recipe-by-URL">Get Recipe by URL</label>
-                                <input id="recipe-by-URL" type="text" name="recipe-by-url"/>
+                                <label for="img-input">Recipe Image</label>
+                                <input id="img-input" type="file"/>
+                                <img id="img-dest" class="img-dest"></img>
                                 <label for="ingredients">Ingredients</label>
-                                <input id="ingredients" type="text" name="ingredients"/>
+                                <textarea class="summernote" name="ingredients" id="ingredients"></textarea>
                                 <label for="method">Method</label>
-                                <input id="method" type="text" name="method"/>
+                                <textarea class="summernote" name="method" id="method"></textarea>
                                 <label for="baking-techniques">Baking Techniques</label>
-                                <select id="baking-techniques" name="baking-techniques" size="5" multiple>
+                                <select id="baking-techniques" name="baking-techniques">
                                     <option value="piping">Piping</option>
                                     <option value="kneading">Kneading</option>
                                     <option value="meringue">Meringue</option>
@@ -69,7 +76,7 @@
                             </section>
                             <section class="btn--form__container">
                                 <button class="btn--form" type="submit">Submit</button>
-                                <button class="btn--form--secondary" formmethod="dialog" type="submit">Cancel</button>
+                                <button id="cancel-btn" class="btn--form--secondary" type ="button" formmethod="dialog">Cancel</button>
                             </section>
                         </form>
                     </dialog>
@@ -77,44 +84,280 @@
                     <!--Last Used Recipes section-->
                     <section class="recent-recipes">
                         <section class="recent-recipes--title">
-                            <h2>Last Used Recipes</h2>
+                            <h2>My Recipes</h2>
                         </section>
 
                         <!--Different recipes displayed as UI cards w/ image and recipe name-->
-                        <section class="recent-recipes--cards">
-                            <article class="recent-recipes--card">
+                        <section id="recipes" class="recent-recipes--cards">
+                            <article class="recent-recipes--card" id="rec1">
                                 <img src="../assets/recipe-images/chocolate-cookies.png" alt="chocolate-cookies"/>
                                 <section class="recent-recipes--card-text">
-                                    <p>30 Minute Chewy Chocolate Cookies</p>
+                                    <p><a href="#" data-target="#modal-1" data-toggle="modal">30 Minute Chewy Chocolate Cookies</a></p>
+                                    <button class="del-recipe" data-target="rec1">Delete</button>
                                 </section>
+
+                                <div class="modal fade" id="modal-1" style="z-index:9999999;"  role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">30 Minute Chewy Chocolate Cookies</div>
+                                            <div class="modal-body">
+                                                <img src="../assets/recipe-images/chocolate-cookies.png" alt="chocolate-cookies"/>
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>300g all-purpose flour</li>
+                                                    <li>50g dutch process cocoa powder, sifted</li>
+                                                    <li>1 tsp salt</li>
+                                                    <li>¾ tsp baking soda</li>
+                                                    <li>225g unsalted butter, at room temperature</li>
+                                                    <li>200g brown sugar</li>
+                                                    <li>100g granulated sugar</li>
+                                                    </li>1 large egg (50g not including the shell), at room temperature</li>
+                                                    <li>1 tsp vanilla bean paste or vanilla extract</li>
+                                                    <li>Granulated Sugar for Rolling</li>
+                                                </ul>
+                                                <h2>Method</h2>
+                                                <ol>
+                                                    <li>Preheat the oven to 350°f / 180°c. Line three baking trays with parchment paper. 
+                                                        In a medium bowl, sift together the flour, cocoa powder, salt, and baking soda. Set aside.</li>
+
+                                                    <li>In the bowl of a stand mixer fitted with the paddle attachment or in a large bowl using an electric mixer, 
+                                                        cream the butter and sugars until light and fluffy, 3-4 minutes. Add the egg and vanilla, and beat until combined. 
+                                                        Add the flour and cocoa mixture, and beat on low until just incorporated.</li>
+                                                    
+                                                    <li>Using a cookie scoop, scoop 2 tbsp worth of mixture at a time (about 40g). Roll into a ball using your hands, 
+                                                        then roll generously in granulated sugar. Place on the baking tray, leaving room to spread (I had 8 cookies per baking tray)</li>
+                                                        
+                                                    <li>Bake one tray at a time for 11-12 minutes, until the cookies have puffed up and are beginning to crack on the tops, 
+                                                        and the edges are set. Remove from the oven and allow to cool on the baking tray for 15 minutes then transfer 
+                                                        to a wire rack to cool completely.</li>
+                                                    <li>Store cookies in an airtight container at room temperature for up to 5 days.</li>
+                                                </ol>
+                                                <h2>Category</h2>
+                                                <p>Cake</p>
+                                                <h2>Baking Techniques</h2>
+                                                <p>Folding</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </article>
                             
-                            <article class="recent-recipes--card">
+                            <article class="recent-recipes--card" id="rec2">
                                 <img src="/assets/recipe-images/custard-danish.png" alt="custard-danish"/>
                                 <section class="recent-recipes--card-text">
-                                    <p>Custard Danish Pastry</p>
+                                    <p><a href="#" data-target="#modal-2" data-toggle="modal">Custard Danish Pastry</a></p>
+                                    <button class="del-recipe" data-target="rec2">Delete</button>
                                 </section>
+                                <div class="modal fade" id="modal-2" style="z-index:9999999;"  role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">Custard Danish Pastry</div>
+                                            <div class="modal-body">
+                                                <img src="../assets/recipe-images/custard-danish.png" alt="chocolate-cookies"/>
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>1 batch Danish Pastry</li>
+                                                    <li>¾ cup whole milk (180ml)</li>
+                                                    <li>2 tablespoons white granulated sugar (notes 1)</li>
+                                                    <li>1 teaspoon vanilla extract</li>
+                                                    <li>1 ½ tablespoons cornflour (cornstarch) (notes 1)</li>
+                                                    <li>1 egg yolk from a large egg</li>
+                                                    <li>Jam of choice or 12 apricot halves</li>
+                                                    <li>1 egg yolk mixed with a dash of water</li>
+                                                    <li>1 cup icing sugar (130g / 4.6oz)</li>
+                                                </ul>
+                                                <h2>Method</h2>
+                                                <ol>
+                                                    <li>Pour ½ cup of milk into a heavy based saucepan, and add sugar and vanilla, then heat on low-medium heat until steaming, stirring regularly to dissolve the sugar. Remove from heat.
+                                                    </li><li>In a large bowl, whisk together the remaining ¼ cup milk, egg yolk and cornflour until smooth and fully combined.
+                                                    </li><li>While whisking, very slowly pour the hot milk mixture into the egg mixture in a slow but steady stream. Don’t pour it too quickly or the heat will scramble the eggs.
+                                                    </li><li>Once everything is combined, return the mix to the saucepan. Heat over medium heat, stirring with a whisk constantly, until it gets very thick and no longer settles into itself when you move it around. This will happen quite quickly after about 5 minutes so it’s important to keep gently whisking increasing intensity as it gets very thick. You will end up with lumpy custard if you don’t.
+                                                    </li><li>Swap to a silicone spatula and pass the custard through a strainer into a clean bowl, then press plastic wrap to the surface and allow to cool to room temperature
+                                                    </li><li>Preheat the oven to 200C / 395F / 180C fan forced. Line 2 baking trays with baking paper.
+                                                    </li><li>On a lightly floured surface, roll the dough out to just over 30x40cm (about 12×16 inches). Trim the edges from the rolled dough, then cut into 12 even squares about 10cm / 4in square each.
+                                                    </li><li>Place the squares of dough onto the baking trays (6 on each), then fold each of the corners into the centre of each square. Press down lightly with your palm. Let them rest for 10-15 minutes
+                                                    </li><li>Use a spoon or similar to press a dent into the centre of each danish, then brush all over with the egg wash.
+                                                    </li><li>Add 2-3 teaspoons of custard to dent in each pastry. Top each with 1-2 teaspoons of jam or an apricot half.
+                                                    </li><li>Bake for 20-22 minutes or until golden, turning the trays after 10 minutes
+                                                    </li>
+                                                </ol>
+                                                <p>To Make the Icing</p></br/>
+                                                <ol><li>Mix together the icing sugar and 1 tablespoon of water. Add more water if you need to thin it or more icing sugar to thicken it. When it’s a consistency you like, drizzle it over the warm pastries.</li></ol>
+                                                <h2>Category</h2>
+                                                <p>Cake</p>
+                                                <h2>Baking Techniques</h2>
+                                                <p>Folding</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </article>
 
-                            <article class="recent-recipes--card">
+                            <article class="recent-recipes--card" id="rec3">
                                 <img src="/assets/recipe-images/swiss-roll-cake.png" alt="swiss-roll-cake"/>
                                 <section class="recent-recipes--card-text">
-                                    <p>Swiss Roll Cake Recipe</p>
+                                    <p><a href="#" data-target="#modal-3" data-toggle="modal">Swiss Roll Cake Recipe</a></p>
+                                    <button class="del-recipe" data-target="rec3">Delete</button>
                                 </section>
+                                <div class="modal fade" id="modal-3" style="z-index:9999999;"  role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">Swiss Roll Cake Recipe</div>
+                                            <div class="modal-body">
+                                                <img src="../assets/recipe-images/swiss-roll-cake.png" alt="chocolate-cookies"/>
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>¾ cup whole milk (180ml)</li>
+                                                    <li>2 tablespoons white granulated sugar (notes 1)</li>
+                                                    <li>1 teaspoon vanilla extract</li>
+                                                    <li>1 ½ tablespoons cornflour (cornstarch) (notes 1)</li>
+                                                    <li>1 egg yolk from a large egg</li>
+                                                    <li>Jam of choice or 12 apricot halves</li>
+                                                    <li>1 egg yolk mixed with a dash of water</li>
+                                                    <li>1 cup icing sugar (130g / 4.6oz)</li>
+                                                </ul>
+                                                <h2>Method</h2>
+                                                <ol>
+                                                    <li>Pour ½ cup of milk into a heavy based saucepan, and add sugar and vanilla, then heat on low-medium heat until steaming, stirring regularly to dissolve the sugar. Remove from heat.
+                                                    </li><li>In a large bowl, whisk together the remaining ¼ cup milk, egg yolk and cornflour until smooth and fully combined.
+                                                    </li><li>While whisking, very slowly pour the hot milk mixture into the egg mixture in a slow but steady stream. Don’t pour it too quickly or the heat will scramble the eggs.
+                                                    </li><li>Once everything is combined, return the mix to the saucepan. Heat over medium heat, stirring with a whisk constantly, until it gets very thick and no longer settles into itself when you move it around. This will happen quite quickly after about 5 minutes so it’s important to keep gently whisking increasing intensity as it gets very thick. You will end up with lumpy custard if you don’t.
+                                                    </li><li>Swap to a silicone spatula and pass the custard through a strainer into a clean bowl, then press plastic wrap to the surface and allow to cool to room temperature
+                                                    </li><li>Preheat the oven to 200C / 395F / 180C fan forced. Line 2 baking trays with baking paper.
+                                                    </li><li>On a lightly floured surface, roll the dough out to just over 30x40cm (about 12×16 inches). Trim the edges from the rolled dough, then cut into 12 even squares about 10cm / 4in square each.
+                                                    </li><li>Place the squares of dough onto the baking trays (6 on each), then fold each of the corners into the centre of each square. Press down lightly with your palm. Let them rest for 10-15 minutes
+                                                    </li><li>Use a spoon or similar to press a dent into the centre of each danish, then brush all over with the egg wash.
+                                                    </li><li>Add 2-3 teaspoons of custard to dent in each pastry. Top each with 1-2 teaspoons of jam or an apricot half.
+                                                    </li><li>Bake for 20-22 minutes or until golden, turning the trays after 10 minutes
+                                                    </li>
+                                                </ol>
+                                                <p>To Make the Icing</p></br/>
+                                                <ol><li>Mix together the icing sugar and 1 tablespoon of water. Add more water if you need to thin it or more icing sugar to thicken it. When it’s a consistency you like, drizzle it over the warm pastries.</li></ol>
+                                                <h2>Category</h2>
+                                                <p>Cookie</p>
+                                                <h2>Baking Techniques</h2>
+                                                <p>Rolling</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </article>
                             
-                            <article class="recent-recipes--card">
+                            <article class="recent-recipes--card" id="rec4">
                                 <img src="/assets/recipe-images/creme-brulee.png" alt="creme-brulee"/>
                                 <section class="recent-recipes--card-text">
-                                    <p>Crème Brûlée (French vanilla custard)</p>
+                                    <p><a href="#" data-target="#modal-4" data-toggle="modal">Crème Brûlée (French vanilla custard)</a></p>
+                                    <button class="del-recipe" data-target="rec4">Delete</button>
                                 </section>
+                                <div class="modal fade" id="modal-4" style="z-index:9999999;"  role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">Creme Brulee</div>
+                                            <div class="modal-body">
+                                                <img src="../assets/recipe-images/creme-brulee.png" alt="chocolate-cookies"/>
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>1 batch Danish Pastry</li>
+                                                    <li>¾ cup whole milk (180ml)</li>
+                                                    <li>2 tablespoons white granulated sugar (notes 1)</li>
+                                                    <li>1 teaspoon vanilla extract</li>
+                                                    <li>1 ½ tablespoons cornflour (cornstarch) (notes 1)</li>
+                                                    <li>1 egg yolk from a large egg</li>
+                                                    <li>Jam of choice or 12 apricot halves</li>
+                                                    <li>1 egg yolk mixed with a dash of water</li>
+                                                    <li>1 cup icing sugar (130g / 4.6oz)</li>
+                                                </ul>
+                                                <h2>Method</h2>
+                                                <ol>
+                                                    <li>Pour ½ cup of milk into a heavy based saucepan, and add sugar and vanilla, then heat on low-medium heat until steaming, stirring regularly to dissolve the sugar. Remove from heat.
+                                                    </li><li>In a large bowl, whisk together the remaining ¼ cup milk, egg yolk and cornflour until smooth and fully combined.
+                                                    </li><li>While whisking, very slowly pour the hot milk mixture into the egg mixture in a slow but steady stream. Don’t pour it too quickly or the heat will scramble the eggs.
+                                                    </li><li>Once everything is combined, return the mix to the saucepan. Heat over medium heat, stirring with a whisk constantly, until it gets very thick and no longer settles into itself when you move it around. This will happen quite quickly after about 5 minutes so it’s important to keep gently whisking increasing intensity as it gets very thick. You will end up with lumpy custard if you don’t.
+                                                    </li><li>Swap to a silicone spatula and pass the custard through a strainer into a clean bowl, then press plastic wrap to the surface and allow to cool to room temperature
+                                                    </li><li>Preheat the oven to 200C / 395F / 180C fan forced. Line 2 baking trays with baking paper.
+                                                    </li><li>On a lightly floured surface, roll the dough out to just over 30x40cm (about 12×16 inches). Trim the edges from the rolled dough, then cut into 12 even squares about 10cm / 4in square each.
+                                                    </li><li>Place the squares of dough onto the baking trays (6 on each), then fold each of the corners into the centre of each square. Press down lightly with your palm. Let them rest for 10-15 minutes
+                                                    </li><li>Use a spoon or similar to press a dent into the centre of each danish, then brush all over with the egg wash.
+                                                    </li><li>Add 2-3 teaspoons of custard to dent in each pastry. Top each with 1-2 teaspoons of jam or an apricot half.
+                                                    </li><li>Bake for 20-22 minutes or until golden, turning the trays after 10 minutes
+                                                    </li>
+                                                </ol>
+                                                <p>To Make the Icing</p></br/>
+                                                <ol><li>Mix together the icing sugar and 1 tablespoon of water. Add more water if you need to thin it or more icing sugar to thicken it. When it’s a consistency you like, drizzle it over the warm pastries.</li></ol>
+                                                <h2>Category</h2>
+                                                <p>Cake</p>
+                                                <h2>Baking Techniques</h2>
+                                                <p>Folding</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </article>
 
-                            <article class="recent-recipes--card">
+                            <article class="recent-recipes--card" id="rec5">
                                 <img src="/assets/recipe-images/japanese-cheesecake.png" alt="japanese-cheesecake"/>
                                 <section class="recent-recipes--card-text">
-                                    <p>Japanese Cheesecake</p>
+                                    <p><a href="#" data-target="#modal-5" data-toggle="modal">Japanese Cheesecake</a></p>
+                                    <button class="del-recipe" data-target="rec5">Delete</button>
                                 </section>
+                                <div class="modal fade" id="modal-5" style="z-index:9999999;"  role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">Japanese Cheesecake</div>
+                                            <div class="modal-body">
+                                                <img src="../assets/recipe-images/japanese-cheesecake.png" alt="chocolate-cookies"/>
+                                                <h2>Ingredients</h2>
+                                                <ul>
+                                                    <li>1 batch Danish Pastry</li>
+                                                    <li>¾ cup whole milk (180ml)</li>
+                                                    <li>2 tablespoons white granulated sugar (notes 1)</li>
+                                                    <li>1 teaspoon vanilla extract</li>
+                                                    <li>1 ½ tablespoons cornflour (cornstarch) (notes 1)</li>
+                                                    <li>1 egg yolk from a large egg</li>
+                                                    <li>Jam of choice or 12 apricot halves</li>
+                                                    <li>1 egg yolk mixed with a dash of water</li>
+                                                    <li>1 cup icing sugar (130g / 4.6oz)</li>
+                                                </ul>
+                                                <h2>Method</h2>
+                                                <ol>
+                                                    <li>Pour ½ cup of milk into a heavy based saucepan, and add sugar and vanilla, then heat on low-medium heat until steaming, stirring regularly to dissolve the sugar. Remove from heat.
+                                                    </li><li>In a large bowl, whisk together the remaining ¼ cup milk, egg yolk and cornflour until smooth and fully combined.
+                                                    </li><li>While whisking, very slowly pour the hot milk mixture into the egg mixture in a slow but steady stream. Don’t pour it too quickly or the heat will scramble the eggs.
+                                                    </li><li>Once everything is combined, return the mix to the saucepan. Heat over medium heat, stirring with a whisk constantly, until it gets very thick and no longer settles into itself when you move it around. This will happen quite quickly after about 5 minutes so it’s important to keep gently whisking increasing intensity as it gets very thick. You will end up with lumpy custard if you don’t.
+                                                    </li><li>Swap to a silicone spatula and pass the custard through a strainer into a clean bowl, then press plastic wrap to the surface and allow to cool to room temperature
+                                                    </li><li>Preheat the oven to 200C / 395F / 180C fan forced. Line 2 baking trays with baking paper.
+                                                    </li><li>On a lightly floured surface, roll the dough out to just over 30x40cm (about 12×16 inches). Trim the edges from the rolled dough, then cut into 12 even squares about 10cm / 4in square each.
+                                                    </li><li>Place the squares of dough onto the baking trays (6 on each), then fold each of the corners into the centre of each square. Press down lightly with your palm. Let them rest for 10-15 minutes
+                                                    </li><li>Use a spoon or similar to press a dent into the centre of each danish, then brush all over with the egg wash.
+                                                    </li><li>Add 2-3 teaspoons of custard to dent in each pastry. Top each with 1-2 teaspoons of jam or an apricot half.
+                                                    </li><li>Bake for 20-22 minutes or until golden, turning the trays after 10 minutes
+                                                    </li>
+                                                </ol>
+                                                <p>To Make the Icing</p></br/>
+                                                <ol><li>Mix together the icing sugar and 1 tablespoon of water. Add more water if you need to thin it or more icing sugar to thicken it. When it’s a consistency you like, drizzle it over the warm pastries.</li></ol>
+                                                <h2>Category</h2>
+                                                <p>Cake</p>
+                                                <h2>Baking Techniques</h2>
+                                                <p>Folding</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </article>
                         </section>
                     </section>

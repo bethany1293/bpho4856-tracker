@@ -16,7 +16,9 @@ header {
 .header__hamburger {
     width: 2.5em; //Increased the width of the hamburger icon to the size of the logo font for visual balance
     margin-left:2em; //Added a gap between the hamburger menu icon and the logo
+    margin-right:1em;
     margin-bottom:0.3em; //Aligned the hamburger menu icon with the logo
+    display:inline;
 }
 
 .header__logo { //Brand Logo in header
